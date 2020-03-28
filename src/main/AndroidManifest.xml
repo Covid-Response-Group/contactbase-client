@@ -1,0 +1,3 @@
+<manifest package="org.covid19.contactbase.client.invoker" xmlns:android="http://schemas.android.com/apk/res/android">
+    <application />
+</manifest>
