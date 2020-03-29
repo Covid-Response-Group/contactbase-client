@@ -10,6 +10,7 @@ import okhttp3.ResponseBody;
 import okhttp3.MultipartBody;
 
 import org.covid19.contactbase.client.model.Contact;
+import org.covid19.contactbase.client.model.QueryRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,16 +21,15 @@ public interface ContactControllerApi {
   /**
    * list
    * 
-   * @param dateStamp dateStamp (required)
-   * @param geohash geohash (required)
+   * @param queryRequest queryRequest (required)
    * @return Call&lt;List&lt;Contact&gt;&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
-  @GET("api/v1/contacts")
-  Call<List<Contact>> listUsingGET(
-    @retrofit2.http.Query("dateStamp") String dateStamp, @retrofit2.http.Query("geohash") String geohash
+  @POST("api/v1/contacts/query")
+  Call<List<Contact>> listUsingPOST(
+    @retrofit2.http.Body QueryRequest queryRequest
   );
 
   /**

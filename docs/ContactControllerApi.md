@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUsingGET**](ContactControllerApi.md#listUsingGET) | **GET** api/v1/contacts | list
+[**listUsingPOST**](ContactControllerApi.md#listUsingPOST) | **POST** api/v1/contacts/query | list
 [**storeUsingPOST**](ContactControllerApi.md#storeUsingPOST) | **POST** api/v1/contacts | store
 
 
-<a name="listUsingGET"></a>
-# **listUsingGET**
-> List&lt;Contact&gt; listUsingGET(dateStamp, geohash)
+<a name="listUsingPOST"></a>
+# **listUsingPOST**
+> List&lt;Contact&gt; listUsingPOST(queryRequest)
 
 list
 
@@ -22,13 +22,12 @@ list
 
 
 ContactControllerApi apiInstance = new ContactControllerApi();
-String dateStamp = "dateStamp_example"; // String | dateStamp
-String geohash = "geohash_example"; // String | geohash
+QueryRequest queryRequest = new QueryRequest(); // QueryRequest | queryRequest
 try {
-    List<Contact> result = apiInstance.listUsingGET(dateStamp, geohash);
+    List<Contact> result = apiInstance.listUsingPOST(queryRequest);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ContactControllerApi#listUsingGET");
+    System.err.println("Exception when calling ContactControllerApi#listUsingPOST");
     e.printStackTrace();
 }
 ```
@@ -37,8 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dateStamp** | **String**| dateStamp |
- **geohash** | **String**| geohash |
+ **queryRequest** | [**QueryRequest**](QueryRequest.md)| queryRequest |
 
 ### Return type
 
